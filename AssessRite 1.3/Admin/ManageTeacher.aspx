@@ -252,10 +252,10 @@
     </script>
     <script>
         $(document).ready(function () {
-           <%-- $('#<%=txtPassword.ClientID%>').keypress(function (e) {
+            $('#<%=txtPassword.ClientID%>').keypress(function (e) {
                 if (e.keyCode == 13)
                     $('#btnSaveTeacher').click();
-            });--%>
+            });
             //$("#navbar li").removeClass("current-menu-item");//this will remove the active class from  
             //$("#navbar1 li").removeClass("current-menu-item");//this will remove the active class from  
             //$('#liMenu').addClass('active');
