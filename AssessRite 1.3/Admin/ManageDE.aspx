@@ -165,7 +165,34 @@
             <img src="../Images/loading.gif" />
         </div>
     </div>
-
+    <script>
+        $(document).ready(function () {
+            $('#<%=txtFirstName.ClientID%>').keypress(function (e) {
+                if (e.keyCode == 13)
+                    $('#btnSaveDE').click();
+            });
+            $('#<%=txtLastName.ClientID%>').keypress(function (e) {
+                if (e.keyCode == 13)
+                    $('#btnSaveDE').click();
+            });
+            $('#<%=txtContactNo.ClientID%>').keypress(function (e) {
+                if (e.keyCode == 13)
+                    $('#btnSaveDE').click();
+            });
+            $('#<%=txtEmailID.ClientID%>').keypress(function (e) {
+                if (e.keyCode == 13)
+                    $('#btnSaveDE').click();
+            });
+            $('#<%=txtUserName.ClientID%>').keypress(function (e) {
+                if (e.keyCode == 13)
+                    $('#btnSaveDE').click();
+            });
+            $('#<%=txtPassword.ClientID%>').keypress(function (e) {
+                if (e.keyCode == 13)
+                    $('#btnSaveDE').click();
+            });
+        });
+    </script>
     <script type="text/javascript">
         function openModal() {
             //  jQuery.noConflict();

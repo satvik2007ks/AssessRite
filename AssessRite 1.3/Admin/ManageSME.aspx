@@ -292,9 +292,33 @@
         </div>
 
     </div>
-    <script type="text/javascript">
-       
-       
+    <script>
+        $(document).ready(function () {
+            $('#<%=txtFirstName.ClientID%>').keypress(function (e) {
+                if (e.keyCode == 13)
+                    $('#<%=btnSMESave.ClientID%>').click();
+            });
+            $('#<%=txtLastName.ClientID%>').keypress(function (e) {
+                if (e.keyCode == 13)
+                    $('#<%=btnSMESave.ClientID%>').click();
+            });
+            $('#<%=txtContactNo.ClientID%>').keypress(function (e) {
+                if (e.keyCode == 13)
+                    $('#<%=btnSMESave.ClientID%>').click();
+            });
+            $('#<%=txtEmailID.ClientID%>').keypress(function (e) {
+                if (e.keyCode == 13)
+                    $('#<%=btnSMESave.ClientID%>').click();
+            });
+            $('#<%=txtUserName.ClientID%>').keypress(function (e) {
+                if (e.keyCode == 13)
+                    $('#<%=btnSMESave.ClientID%>').click();
+            });
+            $('#<%=txtPassword.ClientID%>').keypress(function (e) {
+                if (e.keyCode == 13)
+                    $('#<%=btnSMESave.ClientID%>').click();
+            });
+        });
     </script>
     <script>
         function pageLoad(sender, args) {

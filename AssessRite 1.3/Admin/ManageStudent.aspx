@@ -232,7 +232,38 @@
             <img src="../Images/loading.gif" />
         </div>
     </div>
-
+    <script>
+        $(document).ready(function () {
+            $('#<%=txtFirstName.ClientID%>').keypress(function (e) {
+                if (e.keyCode == 13)
+                    $('#btnSaveStudent').click();
+            });
+            $('#<%=txtLastName.ClientID%>').keypress(function (e) {
+                if (e.keyCode == 13)
+                    $('#btnSaveStudent').click();
+            });
+             $('#<%=txtParentName.ClientID%>').keypress(function (e) {
+                if (e.keyCode == 13)
+                    $('#btnSaveStudent').click();
+            });
+            $('#<%=txtContactNo.ClientID%>').keypress(function (e) {
+                if (e.keyCode == 13)
+                    $('#btnSaveStudent').click();
+            });
+            $('#<%=txtEmailID.ClientID%>').keypress(function (e) {
+                if (e.keyCode == 13)
+                    $('#btnSaveStudent').click();
+            });
+            $('#<%=txtUserName.ClientID%>').keypress(function (e) {
+                if (e.keyCode == 13)
+                    $('#btnSaveStudent').click();
+            });
+            $('#<%=txtPassword.ClientID%>').keypress(function (e) {
+                if (e.keyCode == 13)
+                    $('#btnSaveStudent').click();
+            });
+        });
+    </script>
 
     <script type="text/javascript">
         function openModal() {

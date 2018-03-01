@@ -252,14 +252,30 @@
     </script>
     <script>
         $(document).ready(function () {
+            $('#<%=txtFirstName.ClientID%>').keypress(function (e) {
+                if (e.keyCode == 13)
+                    $('#btnSaveTeacher').click();
+            });
+            $('#<%=txtLastName.ClientID%>').keypress(function (e) {
+                if (e.keyCode == 13)
+                    $('#btnSaveTeacher').click();
+            });
+            $('#<%=txtContactNo.ClientID%>').keypress(function (e) {
+                if (e.keyCode == 13)
+                    $('#btnSaveTeacher').click();
+            });
+            $('#<%=txtEmailID.ClientID%>').keypress(function (e) {
+                if (e.keyCode == 13)
+                    $('#btnSaveTeacher').click();
+            });
+            $('#<%=txtUserName.ClientID%>').keypress(function (e) {
+                if (e.keyCode == 13)
+                    $('#btnSaveTeacher').click();
+            });
             $('#<%=txtPassword.ClientID%>').keypress(function (e) {
                 if (e.keyCode == 13)
                     $('#btnSaveTeacher').click();
             });
-            //$("#navbar li").removeClass("current-menu-item");//this will remove the active class from  
-            //$("#navbar1 li").removeClass("current-menu-item");//this will remove the active class from  
-            //$('#liMenu').addClass('active');
-            //$('#liStudent1').addClass('current-menu-item');
         });
     </script>
 

@@ -153,7 +153,6 @@
     <Content Include="Admin\Class.aspx" />
     <Content Include="Admin\Concepts.aspx" />
     <Content Include="Admin\Home.aspx" />
-    <Content Include="Admin\jsonArray.txt" />
     <Content Include="Admin\ManageDE.aspx" />
     <Content Include="Admin\ManageSME.aspx" />
     <Content Include="Admin\MoveStudents.aspx" />
