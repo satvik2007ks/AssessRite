@@ -231,6 +231,8 @@ namespace AssessRite_1._3.Student
             DataSet ds = (DataSet)ViewState["AnsweredQuestions"];
             if (ds.Tables[0].Rows.Count > 0)
             {
+                string qur = dbLibrary.idBuildQuery("[proc_FinishTest]", hdnTestAssignedId.Value);
+                dbLibrary.idExecute(qur);   
                 Response.Redirect("StudentQuestionPaper.aspx?TestId=" + Request.QueryString["TestId"].ToString() + "&Mode=View");
             }
             else
