@@ -237,30 +237,37 @@
             $('#<%=txtFirstName.ClientID%>').keypress(function (e) {
                 if (e.keyCode == 13)
                     $('#btnSaveStudent').click();
+                return false;
             });
             $('#<%=txtLastName.ClientID%>').keypress(function (e) {
                 if (e.keyCode == 13)
                     $('#btnSaveStudent').click();
+                return false;
             });
              $('#<%=txtParentName.ClientID%>').keypress(function (e) {
                 if (e.keyCode == 13)
                     $('#btnSaveStudent').click();
+                return false;
             });
             $('#<%=txtContactNo.ClientID%>').keypress(function (e) {
                 if (e.keyCode == 13)
                     $('#btnSaveStudent').click();
+                return false;
             });
             $('#<%=txtEmailID.ClientID%>').keypress(function (e) {
                 if (e.keyCode == 13)
                     $('#btnSaveStudent').click();
+                return false;
             });
             $('#<%=txtUserName.ClientID%>').keypress(function (e) {
                 if (e.keyCode == 13)
                     $('#btnSaveStudent').click();
+                return false;
             });
             $('#<%=txtPassword.ClientID%>').keypress(function (e) {
                 if (e.keyCode == 13)
                     $('#btnSaveStudent').click();
+                return false;
             });
         });
     </script>

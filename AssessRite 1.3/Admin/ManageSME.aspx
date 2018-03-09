@@ -297,26 +297,32 @@
             $('#<%=txtFirstName.ClientID%>').keypress(function (e) {
                 if (e.keyCode == 13)
                     $('#<%=btnSMESave.ClientID%>').click();
+                return false;
             });
             $('#<%=txtLastName.ClientID%>').keypress(function (e) {
                 if (e.keyCode == 13)
                     $('#<%=btnSMESave.ClientID%>').click();
+                return false;
             });
             $('#<%=txtContactNo.ClientID%>').keypress(function (e) {
                 if (e.keyCode == 13)
                     $('#<%=btnSMESave.ClientID%>').click();
+                return false;
             });
             $('#<%=txtEmailID.ClientID%>').keypress(function (e) {
                 if (e.keyCode == 13)
                     $('#<%=btnSMESave.ClientID%>').click();
+                return false;
             });
             $('#<%=txtUserName.ClientID%>').keypress(function (e) {
                 if (e.keyCode == 13)
                     $('#<%=btnSMESave.ClientID%>').click();
+                return false;
             });
             $('#<%=txtPassword.ClientID%>').keypress(function (e) {
                 if (e.keyCode == 13)
                     $('#<%=btnSMESave.ClientID%>').click();
+                return false;
             });
         });
     </script>
