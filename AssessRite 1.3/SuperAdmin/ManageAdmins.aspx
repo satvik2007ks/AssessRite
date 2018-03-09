@@ -277,7 +277,7 @@
                 $(document).on('click', '#myTable tbody tr', function () {
                     $("#<%=divError.ClientID%>").css("display", "none");
                     if ($(this).hasClass('selected')) {
-                        $(this).removeClass('selected');
+                      //  $(this).removeClass('selected');
                     }
                     else {
                         table.$('tr.selected').removeClass('selected');
@@ -306,37 +306,37 @@
                         if (jQuery.trim($("#<%=ddlSelectSchool.ClientID%>").val()) == '-1') {
                             $("#<%=lblError.ClientID%>").html('Please Select School');
                             $("#<%=divError.ClientID%>").css("display", "block");
-                            return;
+                            return false;
                         }
                         else if (jQuery.trim($("#<%=txtAdminName.ClientID%>").val()) == '') {
                             $("#<%=lblError.ClientID%>").html('Please Enter Admin Name');
                             $("#<%=divError.ClientID%>").css("display", "block");
-                            return;
+                            return false;
                         }
                         else if ($("#<%=txtAdminAddress.ClientID%>").val() == '') {
                             $("#<%=lblError.ClientID%>").html('Please Enter Address');
                             $("#<%=divError.ClientID%>").css("display", "block");
-                            return;
+                            return false;
                         }
                         else if ($("#<%=txtAdminContactNo.ClientID%>").val() == '') {
                             $("#<%=lblError.ClientID%>").html('Please Select Admin Contact No#');
                     $("#<%=divError.ClientID%>").css("display", "block");
-                    return;
+                            return false;
                 }
                 else if (jQuery.trim($("#<%=txtUserName.ClientID%>").val()) == '') {
                     $("#<%=lblError.ClientID%>").html('Please Enter UserName');
                     $("#<%=divError.ClientID%>").css("display", "block");
-                    return;
+                    return false;
                 }
                 else if (jQuery.trim($("#<%=txtPassword.ClientID%>").val()) == '') {
                     $("#<%=lblError.ClientID%>").html('Please Enter Password');
                     $("#<%=divError.ClientID%>").css("display", "block");
-                    return;
+                    return false;
                 }
                 else if ($("#<%=txtPassword.ClientID%>").val().length < 8) {
                     $("#<%=lblError.ClientID%>").html('Min 8 Characters Required');
                     $("#<%=divError.ClientID%>").css("display", "block");
-                    return;
+                    return false;
                 }
                 else {
                     $("#<%=divError.ClientID%>").css("display", "none");
@@ -345,7 +345,7 @@
                             if (!validateEmail($("#<%=txtAdminEmailId.ClientID%>").val())) {
                                 $("#<%=lblError.ClientID%>").html('Invalid E-Mail-ID');
                                 $("#<%=divError.ClientID%>").css("display", "block");
-                                return;
+                                return false;
                             }
                         }
 
@@ -384,12 +384,12 @@
                                 if (r.d == 'Admin Info Already Exists') {
                                     $("#<%=lblError.ClientID%>").html('Admin Info Already Exists');
                                     $("#<%=divError.ClientID%>").css("display", "block");
-                                    return;
+                                    return false;
                                 }
                                 if (r.d == 'UserName Already Exists') {
                                     $("#<%=lblError.ClientID%>").html('UserName Already Exists');
                                     $("#<%=divError.ClientID%>").css("display", "block");
-                                    return;
+                                    return false;
                                 }
                                 if (r.d == 'Admin Info Updated Successfully') {
                                     $("#<%=lblMsg.ClientID%>").html('Admin Info Updated Successfully');

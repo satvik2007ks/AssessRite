@@ -271,7 +271,7 @@
                 if ($("#<%=ddlClass.ClientID%>").val() == '-1') {
                     $("#<%=lblError.ClientID%>").html('Please Select Class');
                     $("#<%=divError.ClientID%>").css("display", "block");
-                    return;
+                    return false;
                 }
                  <%-- else if ($("#<%=txtClass.ClientID%>").val() > 12) {
                       $("#<%=lblError.ClientID%>").html('Class Cannot Be Greater Than 12');
@@ -321,7 +321,7 @@
                         if (r.d == 'Class Already Exists') {
                             $("#<%=lblError.ClientID%>").html('Class Already Exists');
                               $("#<%=divError.ClientID%>").css("display", "block");
-                              return;
+                            return false;
                           }
                           if (r.d == 'Class Updated Successfully') {
                               $("#<%=lblMsg.ClientID%>").html('Class Updated Successfully');

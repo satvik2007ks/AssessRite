@@ -252,7 +252,7 @@
     </script>
     <script>
         $(document).ready(function () {
-            $('#<%=txtFirstName.ClientID%>').keypress(function (e) {
+           $('#<%=txtFirstName.ClientID%>').keypress(function (e) {
                 if (e.keyCode == 13)
                     $('#btnSaveTeacher').click();
             });
@@ -352,27 +352,27 @@
                 if (jQuery.trim($("#<%=txtFirstName.ClientID%>").val()) == '') {
                     $("#<%=lblError.ClientID%>").html('Please Enter First Name');
                     $("#<%=divError.ClientID%>").css("display", "block");
-                    return;
+                    return false;
                 }
                 else if (jQuery.trim($("#<%=txtLastName.ClientID%>").val()) == '') {
                     $("#<%=lblError.ClientID%>").html('Please Enter Last Name');
                     $("#<%=divError.ClientID%>").css("display", "block");
-                    return;
+                    return false;
                 }
                 else if (jQuery.trim($("#<%=txtUserName.ClientID%>").val()) == '') {
                     $("#<%=lblError.ClientID%>").html('Please Enter UserName');
                     $("#<%=divError.ClientID%>").css("display", "block");
-                    return;
+                    return false;
                 }
                 else if (jQuery.trim($("#<%=txtPassword.ClientID%>").val()) == '') {
                     $("#<%=lblError.ClientID%>").html('Please Enter Password');
                     $("#<%=divError.ClientID%>").css("display", "block");
-                    return;
+                    return false;
                 }
                 else if ($("#<%=txtPassword.ClientID%>").val().length < 8) {
                     $("#<%=lblError.ClientID%>").html('Min 8 Characters Required');
                     $("#<%=divError.ClientID%>").css("display", "block");
-                    return;
+                    return false;
                 }
                 else {
                     $("#<%=divError.ClientID%>").css("display", "none");
@@ -382,7 +382,7 @@
                     if (!validateEmail($("#<%=txtEmailID.ClientID%>").val())) {
                          $("#<%=lblError.ClientID%>").html('Invalid E-Mail-ID');
                               $("#<%=divError.ClientID%>").css("display", "block");
-                              return;
+                              return false;
                           }
                       }
                 var obj = {};
@@ -418,12 +418,12 @@
                         if (r.d == 'Teacher Data Already Exists') {
                             $("#<%=lblError.ClientID%>").html('Teacher Data Already Exists');
                             $("#<%=divError.ClientID%>").css("display", "block");
-                            return;
+                            return false;
                         }
                         if (r.d == 'UserName Already Exists') {
                             $("#<%=lblError.ClientID%>").html('UserName Already Exists');
                             $("#<%=divError.ClientID%>").css("display", "block");
-                            return;
+                            return false;
                         }
                         if (r.d == 'Teacher Details Updated Successfully') {
                             $("#<%=lblMsg.ClientID%>").html('Teacher Details Updated Successfully');

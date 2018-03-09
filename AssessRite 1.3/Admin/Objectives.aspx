@@ -431,27 +431,27 @@
                 if ($("#<%=ddlClassName.ClientID%>").val() == '-1') {
                     $("#<%=lblError.ClientID%>").html('Please Select Class');
                     $("#<%=divError.ClientID%>").css("display", "block");
-                    return;
+                    return false;
                 }
                 else if ($("#<%=ddlSubject.ClientID%>").val() == '-1') {
                     $("#<%=lblError.ClientID%>").html('Please Select Subject');
                     $("#<%=divError.ClientID%>").css("display", "block");
-                    return;
+                    return false;
                 }
                 else if ($("#<%=ddlConcepts.ClientID%>").val() == '-1') {
                     $("#<%=lblError.ClientID%>").html('Please Select Concept');
                       $("#<%=divError.ClientID%>").css("display", "block");
-                      return;
+                    return false;
                 }
                   else if ($("#<%=txtObjectives.ClientID%>").val() == '') {
                       $("#<%=lblError.ClientID%>").html('Please Enter Objective');
                     $("#<%=divError.ClientID%>").css("display", "block");
-                    return;
+                      return false;
                 }
                 else if (trimmedValue == '') {
                     $("#<%=lblError.ClientID%>").html('Objective Cannot Be Blank');
                         $("#<%=divError.ClientID%>").css("display", "block");
-                        return;
+                    return false;
                     }
                     else {
                         $("#<%=divError.ClientID%>").css("display", "none");
@@ -490,7 +490,7 @@
                         if (r.d == 'Objective Already Found') {
                             $("#<%=lblError.ClientID%>").html('Objective Already Found');
                             $("#<%=divError.ClientID%>").css("display", "block");
-                            return;
+                            return false;
                         }
                         if (r.d == 'Objective Updated Successfully') {
                             $("#<%=lblMsg.ClientID%>").html('Objective Updated Successfully');

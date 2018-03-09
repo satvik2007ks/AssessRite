@@ -27,7 +27,7 @@ namespace AssessRite
                 Session["UserId"] = ds.Tables[0].Rows[0]["UserId"].ToString();
                 Session["UserType"] = ds.Tables[0].Rows[0]["UserTypeId"].ToString();
                 Session["UserName"] = ds.Tables[0].Rows[0]["UserName"].ToString();
-                Session["SchoolName"]= ds.Tables[0].Rows[0]["SchoolName"].ToString();
+                Session["SchoolName"] = ds.Tables[0].Rows[0]["SchoolName"].ToString();
                 Session["SchoolId"] = ds.Tables[0].Rows[0]["SchoolId"].ToString();
                 if (Session["UserType"].ToString() == "6")
                 {
@@ -54,18 +54,33 @@ namespace AssessRite
                     Session["AdminId"] = ds.Tables[0].Rows[0]["AdminId"].ToString();
                     Response.Redirect("Admin/Home.aspx");
                 }
-                if (Session["UserType"].ToString() == "1")
-                {
-                   // Session["SuperAdminId"] = ds.Tables[0].Rows[0]["SuperAdminId"].ToString();
-                    Response.Redirect("SuperAdmin/SchoolInfo.aspx");
-                }
-               // Response.Redirect("Home.aspx");
+                //if (Session["UserType"].ToString() == "1")
+                //{
+                //    // Session["SuperAdminId"] = ds.Tables[0].Rows[0]["SuperAdminId"].ToString();
+                //    Response.Redirect("SuperAdmin/SchoolInfo.aspx");
+                //}
+                // Response.Redirect("Home.aspx");
             }
             else
             {
-                divError.Attributes.Add("Style", "display:block;margin-bottom: 10px;");
-                lblError.Text = "Invalid UserName or Password";
-                return;
+                qur = "SELECT Login.UserName, Login.UserId, Login.UserTypeId FROM Login where Login.UserName='" + txtUserName.Text + "' and Login.Password='" + txtPassword.Text + "' and Login.IsDeleted='0'";
+                DataSet ds1 = dbLibrary.idGetCustomResult(qur);
+                if (ds1.Tables[0].Rows.Count > 0)
+                {
+                    if (ds1.Tables[0].Rows[0]["UserTypeId"].ToString() == "1")
+                    {
+                        Session["UserId"] = ds1.Tables[0].Rows[0]["UserId"].ToString();
+                        Session["UserType"] = ds1.Tables[0].Rows[0]["UserTypeId"].ToString();
+                        Session["UserName"] = ds1.Tables[0].Rows[0]["UserName"].ToString();
+                        Response.Redirect("SuperAdmin/SchoolInfo.aspx");
+                    }
+                }
+                else
+                {
+                    divError.Attributes.Add("Style", "display:block;margin-bottom: 10px;");
+                    lblError.Text = "Invalid UserName or Password";
+                    return;
+                }
             }
         }
     }

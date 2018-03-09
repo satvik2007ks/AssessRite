@@ -275,17 +275,17 @@
                 if ($("#<%=ddlClassName.ClientID%>").val() == '-1') {
                     $("#<%=lblError.ClientID%>").html('Please Select Class');
                     $("#<%=divError.ClientID%>").css("display", "block");
-                    return;
+                    return false;
                 }
                 else if ($("#<%=txtSubject.ClientID%>").val() == '') {
                     $("#<%=lblError.ClientID%>").html('Please Enter Subject');
                     $("#<%=divError.ClientID%>").css("display", "block");
-                    return;
+                    return false;
                 }
                 else if (trimmedValue == '') {
                     $("#<%=lblError.ClientID%>").html('Subject Cannot Be Blank');
                     $("#<%=divError.ClientID%>").css("display", "block");
-                    return;
+                    return false;
                 }
                 else if (!english.test($("#<%=txtSubject.ClientID%>").val())) {
                     if ($('#<%=chkLanguage.ClientID%>').is(":checked")) {
@@ -293,7 +293,7 @@
                     else {
                         $("#<%=lblError.ClientID%>").html('If Subject Is Other Than English, Please Select The checkbox');
                         $("#<%=divError.ClientID%>").css("display", "block");
-                        return;
+                        return false;
                     }
                 }
                 else {
@@ -333,7 +333,7 @@
                         if (r.d == 'Subject Already Found') {
                             $("#<%=lblError.ClientID%>").html('Subject Already Found');
                             $("#<%=divError.ClientID%>").css("display", "block");
-                            return;
+                            return false;
                         }
                         if (r.d == 'Subject Updated Successfully') {
                             $("#<%=lblMsg.ClientID%>").html('Subject Updated Successfully');

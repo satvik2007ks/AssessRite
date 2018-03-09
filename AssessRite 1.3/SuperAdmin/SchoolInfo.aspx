@@ -366,7 +366,7 @@
         $(document).on('click', '#myTable tbody tr', function () {
             $("#<%=divError.ClientID%>").css("display", "none");
             if ($(this).hasClass('selected')) {
-                $(this).removeClass('selected');
+             //   $(this).removeClass('selected');
             }
             else {
                 table.$('tr.selected').removeClass('selected');
@@ -403,7 +403,7 @@
                 contentType: "application/json; charset=utf-8",
                 dataType: "json",
                 success: function (response) {
-                    console.log(response.d);
+                    //console.log(response.d);
                     var xmlDoc = $.parseXML(response.d);
                     var checkboxes = $("[id*=<%= chkTestType.ClientID %>] input:checkbox");
                     checkboxes.each(function () {
@@ -434,37 +434,37 @@
                 if (jQuery.trim($("#<%=txtSchoolName.ClientID%>").val()) == '') {
                     $("#<%=lblError.ClientID%>").html('Please Enter School Name');
                     $("#<%=divError.ClientID%>").css("display", "block");
-                    return;
+                    return false;
                 }
                 else if (jQuery.trim($("#<%=txtSchoolAddress.ClientID%>").val()) == '') {
                     $("#<%=lblError.ClientID%>").html('Please Enter School Address');
                     $("#<%=divError.ClientID%>").css("display", "block");
-                    return;
+                    return false;
                 }
                 else if ($("#<%=ddlCountry.ClientID%>").val() == '-1') {
                     $("#<%=lblError.ClientID%>").html('Please Select Country');
                     $("#<%=divError.ClientID%>").css("display", "block");
-                    return;
+                    return false;
                 }
                 else if ($("#<%=ddlState.ClientID%>").val() == '-1') {
                     $("#<%=lblError.ClientID%>").html('Please Select State');
                     $("#<%=divError.ClientID%>").css("display", "block");
-                    return;
+                    return false;
                 }
                 else if (jQuery.trim($("#<%=txtZipCode.ClientID%>").val()) == '') {
                     $("#<%=lblError.ClientID%>").html('Please Enter School Zipcode');
                     $("#<%=divError.ClientID%>").css("display", "block");
-                    return;
+                    return false;
                 }
                 else if (jQuery.trim($("#<%=txtContactNo.ClientID%>").val()) == '') {
                     $("#<%=lblError.ClientID%>").html('Please Enter School Contact No#');
                     $("#<%=divError.ClientID%>").css("display", "block");
-                    return;
+                    return false;
                 }
                 else if (jQuery.trim($("#<%=txtEmailID.ClientID%>").val()) == '') {
                     $("#<%=lblError.ClientID%>").html('Please Enter School E-Mail');
                     $("#<%=divError.ClientID%>").css("display", "block");
-                    return;
+                    return false;
                 }
                 else {
                     $("#<%=divError.ClientID%>").css("display", "none");
@@ -473,7 +473,7 @@
                     if (!validateEmail($("#<%=txtEmailID.ClientID%>").val())) {
                         $("#<%=lblError.ClientID%>").html('Invalid E-Mail-ID');
                         $("#<%=divError.ClientID%>").css("display", "block");
-                        return;
+                        return false;
                     }
                 }
                 var chks = $("#<%= chkTestType.ClientID %> input:checkbox");
@@ -505,7 +505,7 @@
                 obj.contactno = $.trim($("[id*=<%=txtContactNo.ClientID%>]").val());
                 obj.emailid = $.trim($("[id*=<%=txtEmailID.ClientID%>]").val());
                 obj.noofstudents = "0";
-                if ($.trim($("[id*=<%=txtNoOfStudent.ClientID%>]").val() != '')) {
+                if ($.trim($("[id*=<%=txtNoOfStudent.ClientID%>]").val()) != '') {
                     obj.noofstudents = $.trim($("[id*=<%=txtNoOfStudent.ClientID%>]").val());
                 }
                 obj.principalname = $.trim($("[id*=<%=txtPrincipalName.ClientID%>]").val());
@@ -533,12 +533,12 @@
                         if (r.d == 'School Info Already Exists') {
                             $("#<%=lblError.ClientID%>").html('School Info Already Exists');
                             $("#<%=divError.ClientID%>").css("display", "block");
-                            return;
+                            return false;
                         }
                         if (r.d == 'UserName Already Exists') {
                             $("#<%=lblError.ClientID%>").html('UserName Already Exists');
                             $("#<%=divError.ClientID%>").css("display", "block");
-                            return;
+                            return false;
                         }
                         if (r.d == 'School Info Updated Successfully') {
                             $("#<%=lblMsg.ClientID%>").html('School Info Updated Successfully');

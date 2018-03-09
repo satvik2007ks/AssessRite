@@ -389,37 +389,37 @@
                 if (jQuery.trim($("#<%=txtFirstName.ClientID%>").val()) == '') {
                     $("#<%=lblError.ClientID%>").html('Please Enter First Name');
                     $("#<%=divError.ClientID%>").css("display", "block");
-                    return;
+                    return false;
                 }
                 else if (jQuery.trim($("#<%=txtLastName.ClientID%>").val()) == '') {
                     $("#<%=lblError.ClientID%>").html('Please Enter Last Name');
                     $("#<%=divError.ClientID%>").css("display", "block");
-                    return;
+                    return false;
                 }
                 else if ($("#<%=ddlClassName.ClientID%>").val() == '-1') {
                     $("#<%=lblError.ClientID%>").html('Please Select Class');
                     $("#<%=divError.ClientID%>").css("display", "block");
-                    return;
+                    return false;
                 }
                 else if ($("#<%=ddlAcademicYear.ClientID%>").val() == '-1') {
                     $("#<%=lblError.ClientID%>").html('Please Select Academic Year');
                     $("#<%=divError.ClientID%>").css("display", "block");
-                    return;
+                    return false;
                 }
                 else if (jQuery.trim($("#<%=txtUserName.ClientID%>").val()) == '') {
                     $("#<%=lblError.ClientID%>").html('Please Enter UserName');
                     $("#<%=divError.ClientID%>").css("display", "block");
-                    return;
+                    return false;
                 }
                 else if (jQuery.trim($("#<%=txtPassword.ClientID%>").val()) == '') {
                     $("#<%=lblError.ClientID%>").html('Please Enter Password');
                     $("#<%=divError.ClientID%>").css("display", "block");
-                    return;
+                    return false;
                 }
                     else if ($("#<%=txtPassword.ClientID%>").val().length < 8) {
                     $("#<%=lblError.ClientID%>").html('Min 8 Characters Required');
                          $("#<%=divError.ClientID%>").css("display", "block");
-                         return;
+                        return false;
                      }
                 else {
                     $("#<%=divError.ClientID%>").css("display", "none");
@@ -429,7 +429,7 @@
                           {
                                 $("#<%=lblError.ClientID%>").html('Invalid E-Mail-ID');
                     $("#<%=divError.ClientID%>").css("display", "block");
-                    return;
+                              return false;
                           }
                      }
 
@@ -469,12 +469,12 @@
                         if (r.d == 'Student Data Already Exists') {
                             $("#<%=lblError.ClientID%>").html('Student Data Already Exists');
                             $("#<%=divError.ClientID%>").css("display", "block");
-                            return;
+                            return false;
                         }
                         if (r.d == 'UserName Already Exists') {
                             $("#<%=lblError.ClientID%>").html('UserName Already Exists');
                             $("#<%=divError.ClientID%>").css("display", "block");
-                            return;
+                            return false;
                         }
                         if (r.d == 'Student Details Updated Successfully') {
                             $("#<%=lblMsg.ClientID%>").html('Student Details Updated Successfully');

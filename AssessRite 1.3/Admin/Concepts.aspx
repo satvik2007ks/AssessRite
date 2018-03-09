@@ -461,22 +461,22 @@
                 if ($("#<%=ddlClassName.ClientID%>").val() == '-1') {
                     $("#<%=lblError.ClientID%>").html('Please Select Class');
                     $("#<%=divError.ClientID%>").css("display", "block");
-                    return;
+                    return false;
                 }
                 else if ($("#<%=ddlSubject.ClientID%>").val() == '-1') {
                     $("#<%=lblError.ClientID%>").html('Please Select Subject');
                     $("#<%=divError.ClientID%>").css("display", "block");
-                    return;
+                    return false;
                 }
                 else if ($("#<%=txtConcepts.ClientID%>").val() == '') {
                     $("#<%=lblError.ClientID%>").html('Please Enter Concept');
                     $("#<%=divError.ClientID%>").css("display", "block");
-                    return;
+                    return false;
                 }
                     else if (trimmedValue=='') {
                     $("#<%=lblError.ClientID%>").html('Concept Cannot Be Blank');
                     $("#<%=divError.ClientID%>").css("display", "block");
-                    return;
+                        return false;
                 }
                 else {
                     $("#<%=divError.ClientID%>").css("display", "none");
@@ -520,18 +520,18 @@
                         {
                             $("#<%=lblError.ClientID%>").html('Invalid Lower Class');
                             $("#<%=divError.ClientID%>").css("display", "block");
-                            return;
+                            return false;
                         }
                        if (r.d == 'Concept Cannot Have Special Characters')
                         {
                             $("#<%=lblError.ClientID%>").html('Concept Cannot Have Special Characters');
                             $("#<%=divError.ClientID%>").css("display", "block");
-                            return;
+                           return false;
                         }
                         if (r.d == 'Concept Already Found') {
                             $("#<%=lblError.ClientID%>").html('Concept Already Found');
                             $("#<%=divError.ClientID%>").css("display", "block");
-                            return;
+                            return false;
                         }
                         if (r.d == 'Concept Updated Successfully') {
                             $("#<%=lblMsg.ClientID%>").html('Concept Updated Successfully');
