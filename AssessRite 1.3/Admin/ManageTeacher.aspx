@@ -92,59 +92,59 @@
                 <ContentTemplate>--%>
             <div class="row">
                 <div class="col-lg-5">
-                  
-                   <%-- <asp:Panel ID="pnl1" runat="server" DefaultButton="btnSaveTeacher">--%>
-                        <div class="row" style="margin-bottom: 10px; margin-top: 20px;">
-                            <div class="col-md-4"></div>
-                            <div class="col-md-4" style="margin-top: 5px; text-align: center;">
-                                <asp:Button ID="btnNew" runat="server" Text="New" CssClass="btn btn-primary hide" OnClick="btnNew_Click" />
-                                <button id="btnNewTeacher" class="btn btn-primary">New</button>
-                            </div>
-                            <div class="col-md-4">
-                            </div>
-                        </div>
-                        <div class="form-group">
-                            <asp:Label ID="lblFirstName" runat="server" Text="FirstName*"></asp:Label>
-                            <asp:TextBox ID="txtFirstName" runat="server" CssClass="form-control" MaxLength="100" onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)"></asp:TextBox>
 
+                    <%-- <asp:Panel ID="pnl1" runat="server" DefaultButton="btnSaveTeacher">--%>
+                    <div class="row" style="margin-bottom: 10px; margin-top: 20px;">
+                        <div class="col-md-4"></div>
+                        <div class="col-md-4" style="margin-top: 5px; text-align: center;">
+                            <asp:Button ID="btnNew" runat="server" Text="New" CssClass="btn btn-primary hide" OnClick="btnNew_Click" />
+                            <button id="btnNewTeacher" class="btn btn-primary">New</button>
                         </div>
-                        <div class="form-group">
-                            <asp:Label ID="lblLastName" runat="server" Text="LastName*"></asp:Label>
-                            <asp:TextBox ID="txtLastName" runat="server" CssClass="form-control" MaxLength="100" onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)"></asp:TextBox>
+                        <div class="col-md-4">
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <asp:Label ID="lblFirstName" runat="server" Text="FirstName*"></asp:Label>
+                        <asp:TextBox ID="txtFirstName" runat="server" CssClass="form-control" MaxLength="100" onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)"></asp:TextBox>
 
-                        </div>
-                        <div class="form-group">
-                            <asp:Label ID="Label3" runat="server" Text="Contact No#"></asp:Label>
-                            <asp:TextBox ID="txtContactNo" runat="server" CssClass="form-control onlynumber" MaxLength="12"></asp:TextBox>
+                    </div>
+                    <div class="form-group">
+                        <asp:Label ID="lblLastName" runat="server" Text="LastName*"></asp:Label>
+                        <asp:TextBox ID="txtLastName" runat="server" CssClass="form-control" MaxLength="100" onkeypress="return (event.charCode > 64 && event.charCode < 91) || (event.charCode > 96 && event.charCode < 123)"></asp:TextBox>
 
-                        </div>
-                        <div class="form-group">
-                            <asp:Label ID="Label4" runat="server" Text="Email ID"></asp:Label>
-                            <asp:TextBox ID="txtEmailID" runat="server" CssClass="form-control" MaxLength="99" ValidationGroup="vd"></asp:TextBox>
-                            <%--<div class="help-block">
+                    </div>
+                    <div class="form-group">
+                        <asp:Label ID="Label3" runat="server" Text="Contact No#"></asp:Label>
+                        <asp:TextBox ID="txtContactNo" runat="server" CssClass="form-control onlynumber" MaxLength="12"></asp:TextBox>
+
+                    </div>
+                    <div class="form-group">
+                        <asp:Label ID="Label4" runat="server" Text="Email ID"></asp:Label>
+                        <asp:TextBox ID="txtEmailID" runat="server" CssClass="form-control" MaxLength="99" ValidationGroup="vd"></asp:TextBox>
+                        <%--<div class="help-block">
                             <asp:RegularExpressionValidator ID="RegularExpressionValidator1" runat="server" ErrorMessage="Invalid E-Mail ID" ControlToValidate="txtEmailID" Style="color: red; margin-left: 15px;" ValidationGroup="vd" ValidationExpression="^[a-zA-Z0-9._+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$"></asp:RegularExpressionValidator>
                         </div>--%>
-                        </div>
-                        <div class="form-group">
-                            <asp:Label ID="Label1" runat="server" Text="UserName*"></asp:Label>
-                            <asp:TextBox ID="txtUserName" runat="server" CssClass="form-control" MaxLength="20"></asp:TextBox>
+                    </div>
+                    <div class="form-group">
+                        <asp:Label ID="Label1" runat="server" Text="UserName*"></asp:Label>
+                        <asp:TextBox ID="txtUserName" runat="server" CssClass="form-control" MaxLength="20"></asp:TextBox>
 
-                        </div>
-                        <div class="form-group">
-                            <asp:Label ID="Label2" runat="server" Text="Password*"></asp:Label>
-                            <asp:TextBox ID="txtPassword" runat="server" CssClass="form-control" MaxLength="20"></asp:TextBox>
-                            <%-- <div class="help-block">
+                    </div>
+                    <div class="form-group">
+                        <asp:Label ID="Label2" runat="server" Text="Password*"></asp:Label>
+                        <asp:TextBox ID="txtPassword" runat="server" CssClass="form-control" MaxLength="20"></asp:TextBox>
+                        <%-- <div class="help-block">
                             <asp:RegularExpressionValidator ControlToValidate="txtPassword" ID="RegularExpressionValidator3" ValidationExpression="^[\s\S]{8,20}$" runat="server" ErrorMessage="Min 8 Characters Required" Style="color: red" ValidationGroup="vd"></asp:RegularExpressionValidator>
                         </div>--%>
-                            <div class="help-block" id="divError" runat="server" style="display: none">
-                                <asp:Label ID="lblError" runat="server" Style="color: red" Text="Please Enter Class"></asp:Label>
-                            </div>
+                        <div class="help-block" id="divError" runat="server" style="display: none">
+                            <asp:Label ID="lblError" runat="server" Style="color: red" Text="Please Enter Class"></asp:Label>
                         </div>
-                        <input type="hidden" id="hdnTeacherId" />
-                        <input id="btnSaveTeacher" class="btn btn-primary" type="submit" value="Save"/>
-                        <%--<a href="#" id="btnSaveTeacher" class="btn btn-primary">Save</a>--%>
-                        <asp:Button ID="btnTeacherSave" runat="server" Text="Save" CssClass="btn btn-primary hide" ValidationGroup="vd" OnClick="btnTeacherSave_Click" />
-                  <%--  </asp:Panel>--%>
+                    </div>
+                    <input type="hidden" id="hdnTeacherId" />
+                    <input id="btnSaveTeacher" class="btn btn-primary" type="submit" value="Save" />
+                    <%--<a href="#" id="btnSaveTeacher" class="btn btn-primary">Save</a>--%>
+                    <asp:Button ID="btnTeacherSave" runat="server" Text="Save" CssClass="btn btn-primary hide" ValidationGroup="vd" OnClick="btnTeacherSave_Click" />
+                    <%--  </asp:Panel>--%>
                 </div>
                 <div class="col-lg-7">
                     <div class="table-responsive hide">
@@ -252,35 +252,41 @@
     </script>
     <script>
         $(document).ready(function () {
-           $('#<%=txtFirstName.ClientID%>').keypress(function (e) {
-                if (e.keyCode == 13)
+            $('#<%=txtFirstName.ClientID%>').keypress(function (e) {
+                if (e.keyCode == 13) {
                     $('#btnSaveTeacher').click();
-                return false;
+                    return false;
+                }
             });
             $('#<%=txtLastName.ClientID%>').keypress(function (e) {
-                if (e.keyCode == 13)
+                if (e.keyCode == 13){
                     $('#btnSaveTeacher').click();
-                return false;
+                    return false;
+                }
             });
             $('#<%=txtContactNo.ClientID%>').keypress(function (e) {
-                if (e.keyCode == 13)
+                if (e.keyCode == 13){
                     $('#btnSaveTeacher').click();
-                return false;
+                    return false;
+                }
             });
             $('#<%=txtEmailID.ClientID%>').keypress(function (e) {
-                if (e.keyCode == 13)
+                if (e.keyCode == 13){
                     $('#btnSaveTeacher').click();
-                return false;
+                    return false;
+                }
             });
             $('#<%=txtUserName.ClientID%>').keypress(function (e) {
-                if (e.keyCode == 13)
+                if (e.keyCode == 13){
                     $('#btnSaveTeacher').click();
-                return false;
+                    return false;
+                }
             });
             $('#<%=txtPassword.ClientID%>').keypress(function (e) {
-                if (e.keyCode == 13)
+                if (e.keyCode == 13){
                     $('#btnSaveTeacher').click();
-                return false;
+                    return false;
+                }
             });
         });
     </script>
@@ -386,11 +392,11 @@
 
                 if (jQuery.trim($("#<%=txtEmailID.ClientID%>").val()) != '') {
                     if (!validateEmail($("#<%=txtEmailID.ClientID%>").val())) {
-                         $("#<%=lblError.ClientID%>").html('Invalid E-Mail-ID');
-                              $("#<%=divError.ClientID%>").css("display", "block");
-                              return false;
-                          }
-                      }
+                        $("#<%=lblError.ClientID%>").html('Invalid E-Mail-ID');
+                        $("#<%=divError.ClientID%>").css("display", "block");
+                        return false;
+                    }
+                }
                 var obj = {};
                 obj.teacherid = "0";
                 if ($('#hdnTeacherId').val() != '') {

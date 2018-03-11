@@ -235,39 +235,46 @@
     <script>
         $(document).ready(function () {
             $('#<%=txtFirstName.ClientID%>').keypress(function (e) {
-                if (e.keyCode == 13)
+                if (e.keyCode == 13){
                     $('#btnSaveStudent').click();
                 return false;
+                }
             });
             $('#<%=txtLastName.ClientID%>').keypress(function (e) {
-                if (e.keyCode == 13)
+                if (e.keyCode == 13){
                     $('#btnSaveStudent').click();
-                return false;
+                    return false;
+                }
             });
              $('#<%=txtParentName.ClientID%>').keypress(function (e) {
-                if (e.keyCode == 13)
+                if (e.keyCode == 13){
                     $('#btnSaveStudent').click();
-                return false;
+                    return false;
+                }
             });
             $('#<%=txtContactNo.ClientID%>').keypress(function (e) {
-                if (e.keyCode == 13)
+                if (e.keyCode == 13){
                     $('#btnSaveStudent').click();
-                return false;
+                    return false;
+                }
             });
             $('#<%=txtEmailID.ClientID%>').keypress(function (e) {
-                if (e.keyCode == 13)
+                if (e.keyCode == 13){
                     $('#btnSaveStudent').click();
-                return false;
+                    return false;
+                }
             });
             $('#<%=txtUserName.ClientID%>').keypress(function (e) {
-                if (e.keyCode == 13)
+                if (e.keyCode == 13){
                     $('#btnSaveStudent').click();
-                return false;
+                    return false;
+                }
             });
             $('#<%=txtPassword.ClientID%>').keypress(function (e) {
-                if (e.keyCode == 13)
+                if (e.keyCode == 13){
                     $('#btnSaveStudent').click();
-                return false;
+                    return false;
+                }
             });
         });
     </script>
