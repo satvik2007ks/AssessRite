@@ -17,6 +17,10 @@
                         <h3>Unique Test Key :
                             <asp:Label ID="lblTestKey" runat="server"></asp:Label></h3>
                     </div>
+                     <div class="row" style="text-align:center">
+                        <h4>Subject :
+                        <asp:Label ID="lblSubject" runat="server"></asp:Label></h4>
+                    </div>
                 </div>
                 <%--<div class="container">
                     <div class="row">

@@ -85,6 +85,7 @@ namespace AssessRite_1._3.Student
             if (ds.Tables[1].Rows.Count > 0)
             {
                 lblTestKey.Text = ds.Tables[1].Rows[0]["TestKey"].ToString();
+                lblSubject.Text = ds.Tables[1].Rows[0]["SubjectName"].ToString();
             }
             if (ds.Tables[2].Rows.Count > 0)
             {

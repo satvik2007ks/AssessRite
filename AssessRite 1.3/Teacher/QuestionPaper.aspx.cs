@@ -88,6 +88,7 @@ namespace AssessRite
             if (ds.Tables[1].Rows.Count > 0)
             {
                 lblTestKey.Text = ds.Tables[1].Rows[0]["TestKey"].ToString();
+                lblSubject.Text = ds.Tables[1].Rows[0]["SubjectName"].ToString();
             }
         }
 

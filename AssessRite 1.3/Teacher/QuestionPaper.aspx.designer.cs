@@ -10,8 +10,7 @@
 namespace AssessRite {
     
     
-    public partial class QuestionPaper
-    {
+    public partial class QuestionPaper {
         
         /// <summary>
         /// ScriptManager1 control.
@@ -48,6 +47,15 @@ namespace AssessRite {
         /// To modify move field declaration from designer file to code-behind file.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Label lblTestKey;
+        
+        /// <summary>
+        /// lblSubject control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblSubject;
         
         /// <summary>
         /// hdnTestAssignedId control.

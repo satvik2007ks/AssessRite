@@ -31,6 +31,15 @@ namespace AssessRite_1._3.Student {
         protected global::System.Web.UI.WebControls.Label lblTestKey;
         
         /// <summary>
+        /// lblSubject control.
+        /// </summary>
+        /// <remarks>
+        /// Auto-generated field.
+        /// To modify move field declaration from designer file to code-behind file.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label lblSubject;
+        
+        /// <summary>
         /// divMain control.
         /// </summary>
         /// <remarks>

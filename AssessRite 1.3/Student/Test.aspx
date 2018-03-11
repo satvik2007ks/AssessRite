@@ -21,8 +21,15 @@
             </div>
             <div class="col">
             </div>
-
         </div>
+         <div class="row" style="text-align:center; margin-top:5px;">
+              <div class="col-10">
+                        <h4>Subject :
+                        <asp:Label ID="lblSubject" runat="server"></asp:Label></h4>
+                    </div>
+             </div>
+         <div class="col">
+            </div>
     </div>
     <hr />
     <div class="container-fluid" style="margin-top: 20px;">
