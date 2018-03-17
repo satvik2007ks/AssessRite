@@ -128,7 +128,10 @@ namespace AssessRite_1._3.Student
             }
             if (ds.Tables[4].Rows.Count > 0)
             {
-                radbtnOptions.SelectedValue = ds.Tables[4].Rows[0]["StudentAnswerId"].ToString();
+                if (ds.Tables[4].Rows[0]["StudentAnswerId"].ToString() != "0")
+                {
+                    radbtnOptions.SelectedValue = ds.Tables[4].Rows[0]["StudentAnswerId"].ToString();
+                }
             }
         }
 
@@ -170,9 +173,9 @@ namespace AssessRite_1._3.Student
             btnNext.Enabled = false;
             //if (radbtnOptions.SelectedIndex != -1)
             //{
-                string qur = dbLibrary.idBuildQuery("[proc_saveAnswers]", hdnTestAssignedId.Value, hdnTestQuestionId.Value, radbtnOptions.SelectedValue, "MultipleChoice");
-                dbLibrary.idExecute(qur);
-          //  }
+            string qur = dbLibrary.idBuildQuery("[proc_saveAnswers]", hdnTestAssignedId.Value, hdnTestQuestionId.Value, radbtnOptions.SelectedValue, "MultipleChoice");
+            dbLibrary.idExecute(qur);
+            //  }
             if (int.Parse(hdnQuestionNo.Value) == int.Parse(hdnTotal.Value))
             {
                 divMain.Attributes.Add("style", "display:none");
@@ -233,7 +236,7 @@ namespace AssessRite_1._3.Student
             if (ds.Tables[0].Rows.Count > 0)
             {
                 string qur = dbLibrary.idBuildQuery("[proc_FinishTest]", hdnTestAssignedId.Value);
-                dbLibrary.idExecute(qur);   
+                dbLibrary.idExecute(qur);
                 Response.Redirect("StudentQuestionPaper.aspx?TestId=" + Request.QueryString["TestId"].ToString() + "&Mode=View");
             }
             else

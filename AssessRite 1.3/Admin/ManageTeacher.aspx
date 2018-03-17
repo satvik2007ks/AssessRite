@@ -343,7 +343,7 @@
                 $(this).addClass('selected');
             }
 
-            $("#btnSaveTeacher").html('Update');
+            $("#btnSaveTeacher").val('Update');
             $("#btnDeleteTeacher").css("display", "block");
 
             $('#hdnTeacherId').val($(this).find('td:nth-child(7)').text());
@@ -408,7 +408,7 @@
                 obj.emailid = $.trim($("[id*=<%=txtEmailID.ClientID%>]").val());
                 obj.username = $.trim($("[id*=<%=txtUserName.ClientID%>]").val());
                 obj.password = $.trim($("[id*=<%=txtPassword.ClientID%>]").val());
-                obj.buttontext = $("#btnSaveTeacher").html();
+                obj.buttontext = $("#btnSaveTeacher").val();
                 $.ajax({
                     type: "POST",
                     url: "ManageTeacher.aspx/SendParameters",
@@ -505,7 +505,7 @@
             $('#<%=txtPassword.ClientID%>').val('');
             $("#<%=divError.ClientID%>").css("display", "none");
             $("#btnDeleteTeacher").css("display", "none");
-            $("#btnSaveTeacher").html('Save');
+            $("#btnSaveTeacher").val('Save');
         }
     </script>
 
