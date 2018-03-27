@@ -9,6 +9,14 @@
             };
         });
     </script>
+    <style>
+        .margintop {
+            margin-top: -10px;
+        }
+        .marginleft {
+            margin-left:15px;
+        }
+    </style>
 </asp:Content>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -25,9 +33,10 @@
                         <h3>Unique Test Key :
                             <asp:Label ID="lblTestKey" runat="server"></asp:Label></h3>
                     </div>
-                    <div class="row" style="text-align:center">
+                    <div class="row" style="text-align: center">
                         <h4>Subject :
-                        <asp:Label ID="lblSubject" runat="server"></asp:Label></h4>
+                       
+                            <asp:Label ID="lblSubject" runat="server"></asp:Label></h4>
                     </div>
                 </div>
                 <%--<div class="container">
@@ -71,7 +80,7 @@
                                     <asp:TextBox ID="txtAnswer" runat="server" TextMode="MultiLine" Rows="5" CssClass="form-control"></asp:TextBox>
                                 </div>
                             </div>
-                            <div class="row" runat="server" id="divOptions" style="display: block;">
+                              <div class="row" runat="server" id="divOptions" style="display: block;">
                                 <div class="col-md-8">
                                     <div class="col-md-3"></div>
                                     <div class="col-md-9">
@@ -79,13 +88,42 @@
                                     </div>
                                 </div>
                                 <div class="col-md-4">
-                                    <div id="divAnswer" class="row" runat="server" style="display: none;">
-                                        <label>Right Answer: </label>
+                                    <div id="divAnswer" class="row marginleft" runat="server" style="display: none;">
+                                        <span>Right Answer: </span>
+                                        <asp:Literal ID="lblRightAnswer" runat="server"></asp:Literal>
+                                        <asp:Image ID="imgRightAnswer" runat="server" Visible="true" Width="80" Height="60" />
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                             <br />
+                          <%--  <div class="row" runat="server" id="divOptions" style="display: block;">
+                                <div class="col-md-8">
+                                    <div class="col-md-3"></div>
+                                    <div class="col-md-9">
+                                        <asp:RadioButtonList ID="radbtnOptions" runat="server" CssClass="radio radio-inline"></asp:RadioButtonList>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                </div>
+                            </div>
+                            <div id="divAnswer" class="row margintop" runat="server" style="display: none;">
+                                <div class="row">
+                                    <div class="col-2">
+                                        <div class="row">
+                                            <div class="col-2"></div>
+                                            <div class="col">
+                                            <label>Right Answer: </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-8">
                                         <asp:Label ID="lblRightAnswer" runat="server"></asp:Label>
                                         <asp:Image ID="imgRightAnswer" runat="server" Visible="true" Width="80" Height="60" />
                                     </div>
                                 </div>
-                            </div>
+                            </div>--%>
+
                             <%--</div>--%>
                         </ItemTemplate>
                     </asp:Repeater>
@@ -120,27 +158,27 @@
         }--%>
         function Print(divID) {
             $("#<%=printButton.ClientID%>").hide();
-             $('#MasterFooter').hide();
-             //Get the HTML of div
-             var divElements = document.getElementById(divID).innerHTML;
-             //Get the HTML of whole page
-             var oldPage = document.body.innerHTML;
+            $('#MasterFooter').hide();
+            //Get the HTML of div
+            var divElements = document.getElementById(divID).innerHTML;
+            //Get the HTML of whole page
+            var oldPage = document.body.innerHTML;
 
-             //Reset the page's HTML with div's HTML only
-             document.body.innerHTML =
-               "<html><head><title></title></head><body><img src='../Images/logo.png' />" +
-               divElements + "</body>";
+            //Reset the page's HTML with div's HTML only
+            document.body.innerHTML =
+                "<html><head><title></title></head><body><img src='../Images/logo.png' />" +
+                divElements + "</body>";
 
-             //Print Page
-             window.print();
+            //Print Page
+            window.print();
 
-             //Restore orignal HTML
-             document.body.innerHTML = oldPage;
-             $("#<%=printButton.ClientID%>").show();
+            //Restore orignal HTML
+            document.body.innerHTML = oldPage;
+            $("#<%=printButton.ClientID%>").show();
 
         }
     </script>
-    <script type="text/javascript">
+       <script type="text/javascript">
         if (document.layers) {
             //Capture the MouseDown event.
             document.captureEvents(Event.MOUSEDOWN);

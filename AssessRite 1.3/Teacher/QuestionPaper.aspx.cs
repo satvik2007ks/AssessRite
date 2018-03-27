@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
+using System.Text.RegularExpressions;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.HtmlControls;
@@ -104,7 +105,7 @@ namespace AssessRite
                 HtmlGenericControl divBrief = (HtmlGenericControl)e.Item.FindControl("divBrief");
                 HtmlGenericControl divAnswer = (HtmlGenericControl)e.Item.FindControl("divAnswer");
                 TextBox txtAnswer = (TextBox)e.Item.FindControl("txtAnswer");
-                Label lblRightAnswer = (Label)e.Item.FindControl("lblRightAnswer");
+                Literal lblRightAnswer = (Literal)e.Item.FindControl("lblRightAnswer");
                 Image imgRightAnswer = (Image)e.Item.FindControl("imgRightAnswer");
                 //   Label lblQuestion = (Label)e.Item.FindControl("lblQuestion");
                 //  Literal lblQuestion = (Literal)e.Item.FindControl("lblQuestion");
@@ -164,7 +165,10 @@ namespace AssessRite
                     else if (hdnAnswerTypeId.Value == "1")
                     {
                         divAnswer.Attributes.Add("style", "display:block");
-                        lblRightAnswer.Text = ds1.Tables[0].Rows[0]["Answer"].ToString();
+                        string rightans = ds1.Tables[0].Rows[0]["Answer"].ToString();
+                        Regex rgx = new Regex("<p>|</p>");
+                        rightans = rgx.Replace(rightans, "", 2);
+                        lblRightAnswer.Text = rightans;
                         imgRightAnswer.Visible = false;
 
                     }
@@ -179,7 +183,7 @@ namespace AssessRite
                 if (Request.QueryString["Mode"] == "View")
                 {
                     Image imgStatus = (Image)e.Item.FindControl("imgStatus");
-
+                    radbtnOptions.Enabled = false;
                     qur = "SELECT Questions.AnswerTypeId, TestQuestions.RightAnswerId, Answers.Answer, StudentAnswers.StudentAnswerId, StudentAnswers.IsRightAnswer FROM TestQuestions LEFT OUTER JOIN StudentAnswers ON TestQuestions.TestQuestionId = StudentAnswers.TestQuestionId LEFT OUTER JOIN Answers ON TestQuestions.RightAnswerId = Answers.AnswerId LEFT OUTER JOIN Questions ON TestQuestions.QuestionId = Questions.QuestionId where TestQuestions.TestId='" + Request.QueryString["TestId"] + "' and TestQuestions.QuestionId='" + hdnQuestionId.Value + "' and StudentAnswers.TestAssignedId='" + hdnTestAssignedId.Value + "'";
                     DataSet ds2 = dbLibrary.idGetCustomResult(qur);
                     if (hdnAnswerTypeId.Value == "2")
@@ -247,7 +251,12 @@ namespace AssessRite
                             {
                                 imgStatus.ImageUrl = "../images/wrong.png";
                                 divAnswer.Attributes.Add("style", "display:block");
-                                lblRightAnswer.Text = ds2.Tables[0].Rows[0]["Answer"].ToString();
+                              //  lblRightAnswer.Text = ds2.Tables[0].Rows[0]["Answer"].ToString();
+
+                                string rightans = ds2.Tables[0].Rows[0]["Answer"].ToString();
+                                Regex rgx = new Regex("<p>|</p>");
+                                rightans = rgx.Replace(rightans, "", 2);
+                                lblRightAnswer.Text = rightans;
                                 imgRightAnswer.Visible = false;
                             }
                         }

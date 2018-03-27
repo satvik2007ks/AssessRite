@@ -1,6 +1,12 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Teacher/teacher.Master" AutoEventWireup="true" CodeBehind="QuestionPaper.aspx.cs" Inherits="AssessRite.QuestionPaper" %>
 
 <asp:Content ID="Content2" ContentPlaceHolderID="head" runat="server">
+    <style>
+        .marginleft{
+            margin-left:15px;
+        }
+    </style>
+    
 </asp:Content>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="ContentPlaceHolder1" runat="server">
@@ -70,13 +76,41 @@
                                     </div>
                                 </div>
                                 <div class="col-md-4">
-                                    <div id="divAnswer" class="row" runat="server" style="display: none;">
-                                        <label>Right Answer: </label>
+                                    <div id="divAnswer" class="row marginleft" runat="server" style="display: none;">
+                                        <span>Right Answer: </span>
+                                        <asp:Literal ID="lblRightAnswer" runat="server"></asp:Literal>
+                                        <asp:Image ID="imgRightAnswer" runat="server" Visible="true" Width="80" Height="60" />
+                                       
+                                    </div>
+                                </div>
+                            </div>
+                             <br />
+                           <%--  <div class="row" runat="server" id="divOptions" style="display: block;">
+                                <div class="col-md-8">
+                                    <div class="col-md-3"></div>
+                                    <div class="col-md-9">
+                                        <asp:RadioButtonList ID="radbtnOptions" runat="server" CssClass="radio radio-inline"></asp:RadioButtonList>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                </div>
+                            </div>
+                            <div id="divAnswer" class="row margintop" runat="server" style="display: none;">
+                                <div class="row">
+                                    <div class="col-2">
+                                        <div class="row">
+                                            <div class="col-2"></div>
+                                            <div class="col">
+                                            <label>Right Answer: </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-8">
                                         <asp:Label ID="lblRightAnswer" runat="server"></asp:Label>
                                         <asp:Image ID="imgRightAnswer" runat="server" Visible="true" Width="80" Height="60" />
                                     </div>
                                 </div>
-                            </div>
+                            </div>--%>
                             <%--</div>--%>
                         </ItemTemplate>
                     </asp:Repeater>
@@ -131,7 +165,7 @@
 
         }
     </script>
-    <script type="text/javascript">
+    <%--<script type="text/javascript">
 if (document.layers) {
     //Capture the MouseDown event.
     document.captureEvents(Event.MOUSEDOWN);
@@ -158,7 +192,7 @@ else {
 document.oncontextmenu = function () {
     return false;
 };
-</script>
+</script>--%>
       <script>
         $(document).ready(function () {
             $('#collapseComponents li').removeClass("current-menu-item");

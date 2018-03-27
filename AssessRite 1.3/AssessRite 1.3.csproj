@@ -24,6 +24,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <Use64BitIISExpress />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -1114,19 +1115,19 @@
     <Compile Include="SME\sme.Master.designer.cs">
       <DependentUpon>sme.Master</DependentUpon>
     </Compile>
-    <Compile Include="Student\StudentQuestionPaper.aspx.cs">
-      <DependentUpon>StudentQuestionPaper.aspx</DependentUpon>
-      <SubType>ASPXCodeBehind</SubType>
-    </Compile>
-    <Compile Include="Student\StudentQuestionPaper.aspx.designer.cs">
-      <DependentUpon>StudentQuestionPaper.aspx</DependentUpon>
-    </Compile>
     <Compile Include="Student\student.Master.cs">
       <DependentUpon>student.Master</DependentUpon>
       <SubType>ASPXCodeBehind</SubType>
     </Compile>
     <Compile Include="Student\student.Master.designer.cs">
       <DependentUpon>student.Master</DependentUpon>
+    </Compile>
+    <Compile Include="Student\StudentQuestionPaper.aspx.cs">
+      <DependentUpon>StudentQuestionPaper.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Student\StudentQuestionPaper.aspx.designer.cs">
+      <DependentUpon>StudentQuestionPaper.aspx</DependentUpon>
     </Compile>
     <Compile Include="Student\TakeTest.aspx.cs">
       <DependentUpon>TakeTest.aspx</DependentUpon>
